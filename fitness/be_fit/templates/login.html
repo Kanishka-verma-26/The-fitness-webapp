@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}<br><br>
+
+    <h1>Login Form</h1>
+
+<div class="jumbotron">
+    <section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-lg-7 col-xl-6">
+<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/nVTa8D8zJUc2A" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/nVTa8D8zJUc2A"></a></p>
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+        <form method="POST">
+          	{% csrf_token %}
+            {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+    {% endfor %}
+</ul>
+{% endif %}
+                    <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="mail">Email address</label><br>
+                          <input type="email" name="Email" id="mail" class="form-control form-control-lg" />
+                        </div>
+
+                        <!-- Password input -->
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="pswrd">Password</label>
+                          <input type="password" name="Password" id="pswrd" class="form-control form-control-lg" />
+                        </div>
+
+                        <div class="d-flex justify-content-around align-items-center mb-4">
+                          <!-- Checkbox -->
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="ifform1Example3" checked/>
+                              <label class="form-check-label" for="ifform1Example3"> Remember me </label>
+                              <a href="#!">Forgot password?</a>
+                          </div>
+
+                        </div><br>
+
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+
+                        <div class="divider d-flex align-items-center my-4">
+                          <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+                        </div>
+
+                        <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="#!" role="button">
+                          <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
+                        </a>
+                        <a class="btn btn-primary btn-lg btn-block" style="background-color: #55acee" href="#!" role="button">
+                          <i class="fab fa-twitter me-2"></i>Continue with Twitter</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+{% endblock %}

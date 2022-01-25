@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}<br><br>
+<!--<img class="img-fluid"  src="{% static 'gym.jpg'%}"><br><br>-->
+<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/3oKIPavRPgJYaNI97W" width="100%" height="80%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/animation-yoga-exercise-3oKIPavRPgJYaNI97W"></a></p><div id="idjumbotron">
+
+      <div>
+          <h1> Calculate your BMI</h1>
+    <p id="intro">Calculate your BMI (body mass index) by using the form below. Enter your weight and height and click the Calculate button to display your BMI result.</p>
+    <form method="POST" name="bmiform">
+        {% csrf_token %}
+        <div class="alignright">
+            <h3>BMI Categories:</h3>
+            <p>Underweight = < 18.5</p>
+            <p>Normal weight = 18.5–24.9</p>
+            <p>Overweight = 25–29.9</p>
+            <p>Overweight = 25–29.9</p>
+        </div>
+        <fieldset>
+        <legend>Height and Weight</legend>
+        <label for="pounds">Weight (pounds):</label>
+        <input type="text" name="pounds" id="pounds">
+        <br>
+        <label for="inches">Height (inches):</label>
+        <input type="text" name="inches" id="inches">
+        <br>
+        <button type="button" name="calculate" value="Calculate your BMI" onclick="calcBMI()">Calculate your BMI</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>BMI</legend>
+        <label for="bmi" id="bmi_label">Your calculated BMI is:</label>
+        <input type="text" name="bmi" id="bmi" readonly="readonly">
+      </fieldset>
+        <a href="{% url 'gender' %}">proceed</a>
+
+    </form>
+  </div>
+</div>
+{% endblock %}
