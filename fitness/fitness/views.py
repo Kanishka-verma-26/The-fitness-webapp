@@ -8,6 +8,12 @@ def index(request):
 def food_options(request):
     return render(request,'food options.html')
 
+def loading(request):
+    return render(request,'loading.html')
+
+def workout(request):
+    return render(request,'workout-fe.html')
+
 class Gender(TemplateView):
     template_name = 'gender.html'
 

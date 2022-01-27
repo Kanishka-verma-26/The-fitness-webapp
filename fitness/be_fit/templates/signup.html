@@ -3,7 +3,7 @@
 
 <div class="jumbotron">
     <h1>Registration Form</h1>
-        <h2 style="color:white">Fill out the form carefully for registration</h2 style="color:white"><br>
+        <h2 style="color:white">Fill out the form carefully for registration</h2><br>
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}
@@ -17,6 +17,6 @@
     {{ form.as_p }}
 
     <button type="submit" class="save btn btn-default">Sign up</button>
-    </form>
+</form>
 </div>
 {% endblock %}

@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index,name='index'),
     path('gender/',views.Gender.as_view(),name="gender"),
+    path('workout/', views.workout, name="workout"),
     path('BMI/', views.BMI, name="BMI"),
     path('be_fit/',include('be_fit.urls')),
     path('food_options', views.food_options, name='food_options'),
