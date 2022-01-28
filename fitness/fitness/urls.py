@@ -19,9 +19,13 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('oauth/', include('social_django.urls',namespace='social')),
     path('',views.index,name='index'),
     path('gender/',views.Gender.as_view(),name="gender"),
-    path('workout/', views.workout, name="workout"),
+    path('hard-workout/', views.hard, name="hard-workout"),
+    path('medium-workout/', views.medium, name="medium-workout"),
+    path('easy-workout/', views.easy, name="easy-workout"),
+    path('activity/',views.activity,name='activity'),
     path('BMI/', views.BMI, name="BMI"),
     path('be_fit/',include('be_fit.urls')),
     path('food_options', views.food_options, name='food_options'),

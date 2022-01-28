@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="activity">
+
+<h1>Select Your Activity Status</h1><br><br>
+    <div class="container-img1">
+        <a href="{% url 'easy-workout' %}"><img src="{% static 'stretch.jpeg' %}"><p>Slightly active</p></a><br><br><br>
+    </div>
+    <div class="container-img2">
+        <a href="{% url 'medium-workout' %}"><img src="{% static 'leg.jpeg' %}"><p>Moderately active</p></a><br><br><br>
+    </div>
+    <div class="container-img3">
+    <a href="{% url 'hard-workout' %}"><img src="{% static 'b7.jpeg' %}"><p>Highly active</p></a><br><br><br><br>
+    </div>
+</div>
+{% endblock %}

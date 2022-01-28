@@ -1,0 +1,318 @@
+body {
+  background: var(--background);
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --background: hsl(180 6.7% 5.9%);
+  --nav-bar: hsl(180 6.5% 48.2%);
+  --color-normal: hsl(180 7.2% 13.5%);
+  --color-hover: hsl(180 8.3% 81.2%);
+  --color-active: hsl(180 8% 65.9%);
+  --bar-shadow: hsl(180 6.4% 21.4%);
+}
+
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background: var(--background);
+}
+
+
+/*
+ *  navigation-bar
+ */
+#nav-bar {
+  margin: auto;
+  height: 5.5rem;
+  width: 100%;
+  text-align: center;
+  background: var(--nav-bar);
+  opacity: 0.09;
+  transition: 0.35s ease;
+}
+#nav-bar:hover {
+  margin: auto;
+  transform: translateY(1em);
+  width: 98%;
+  opacity: 0.5;
+  box-shadow:
+    -0.3em -0.3em var(--bar-shadow);
+}
+
+
+/*
+ *  bar-contents
+ */
+.name1 {
+  position: absolute;
+  top: 0.1em;
+  right: 10vw;
+  text-decoration: none;
+  color: hsl(180 5.9% 96.7%);
+  font: 30pt 'Rockwell',Trebuchet MS;
+}
+.home {
+  position: absolute;
+  top: 0.7em;
+  left: 2rem;
+  text-decoration: none;
+  color: var(--color-normal);
+  font: 18pt'Trebuchet MS',Verdana;
+
+}
+.home:hover {
+  top: 0.75em;
+  color: var(--color-hover);
+}
+.home:active {
+  top: 0.8em;
+  color: var(--color-hover);
+  text-shadow:
+    0 -0.07em var(--color-normal);
+}
+.store {
+  position: absolute;
+  top: 0.7em;
+  left: 10rem;
+  text-decoration: none;
+  color: var(--color-normal);
+  font: 18pt 'Trebuchet MS',Verdana;
+}
+.store:hover {
+  top: 0.75em;
+  color: var(--color-hover);
+}
+.store:active {
+  top: 0.8em;
+  color: var(--color-hover);
+  text-shadow:
+    0 -0.07em var(--color-normal);
+}
+.about {
+  position: absolute;
+  top: 0.7em;
+  left: 16rem;
+  text-decoration: none;
+  color: var(--color-normal);
+  font: 18pt 'Trebuchet MS',Verdana;
+}
+.about:hover {
+  top: 0.75em;
+  color: var(--color-hover);
+}
+.about:active {
+  top: 0.8em;
+  color: var(--color-hover);
+  text-shadow:
+    0 -0.07em var(--color-normal);
+}
+
+.about1 {
+  position: absolute;
+  top: 0.1em;
+  right: 30vw;
+  text-decoration: none;
+  color: hsl(180 5.9% 96.7%);
+  font: 18pt 'Trebuchet MS',Verdana;
+}
+
+
+
+
+
+
+.jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: var(--background);
+  border-radius: .3rem;
+}
+
+
+
+
+
+#abc button{
+background: var(--background);
+border-color:background: var(--background);
+  opacity: 0.6;
+
+}
+#abc button:hover {opacity: 1}
+
+
+
+#abc button img{
+width: 250px;
+    height: 250px;
+border: 0.2rem solid #fff;
+border-radius: 2rem;
+background: var(--background);
+
+  box-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 2rem #bc13fe,
+            0 0 0.8rem #bc13fe,
+            0 0 2.8rem #bc13fe,
+            inset 0 0 1.3rem #bc13fe;
+}
+
+
+
+
+#idjumbotron{
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: #e9ecef;
+  border-radius: .3rem;
+
+}
+
+
+
+
+
+fieldset {
+  width: 300px;
+  margin: 25px 0 0 50px;
+
+  box-shadow: 1px 1px #cccccc;
+  padding: 10px;
+}
+
+label {
+  float: left;
+  width: 140px;
+  display: block;
+  clear: left;
+  text-align: right;
+  padding-right: 10px;
+  margin-top: 10px;
+}
+
+button {
+  margin-left: 150px;
+}
+
+input {
+  margin-top: 10px;
+  display: block;
+  text-align: right;
+  width: 128px;
+}
+
+#bmi_label {
+  width: 200px;
+}
+
+#bmi {
+  width: 66px;
+}
+
+#intro {
+  margin: 25px 0 0 50px;
+  padding: 10px;
+  box-shadow: 1px 1px #cccccc;
+}
+.img-fluid{
+    max-width:100%;
+    height:auto;
+}
+
+.alignright{
+float:right;
+border:1px solid black;
+  border-spacing: 1em .5em;
+    padding: 1em 2em 1em 2em;
+
+}
+
+#food_items h1,h2,h3,p{
+color:white;
+}
+
+#food_items .img-fluids{
+   max-width:100%;
+    height:auto;
+}
+
+#food_items p{
+font-size : 20px;
+}
+#food_items h2{
+color:#706060;
+}
+#food_items h3{
+color:#706060;
+}
+#idjumbotron p, h2,h3{
+color:black;
+}
+
+.post-form input{
+color:black;
+}
+
+.post-form label{
+color:#524848;
+}
+.form-outline  .form-label{
+color:#afc0db;
+font-size:19px;
+}
+
+.form-check .form-check-label{
+color:#afc0db;
+font-size:15px;
+}
+
+/* .activity div{
+
+ margin-left:155px;
+margin-bottomt:auto;
+} */
+.activity img{
+height:200px;
+width:600px;
+margin-left:8%;
+opacity: 0.35;
+text-align:center;
+}
+
+.activity img:hover{
+opacity:0.88;
+}
+
+
+.activity h1{
+font-size:4em;
+font-weight:bold;
+}
+
+.container-img1 p{
+font-size:3em;
+font-weight :bold;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-110%, 17%);
+}
+
+.container-img2 p{
+font-size:3em;
+font-weight :bold;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-100%, 400%);
+}
+
+.container-img3 p{
+font-size:3em;
+font-weight :bold;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-130%, 800%);
+}

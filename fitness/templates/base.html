@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="{% static 'mastercss.css' %}">
+    <link rel="stylesheet" href="{% static 'master.css' %}">
     <style>
 
 header[role="banner"] #logo-main {
@@ -54,13 +54,25 @@ header[role="banner"] #logo-main {
     </div>
     <div class="collapse navbar-collapse" id="navbar-primary-collapse">
       <ul class="nav navbar-nav">
+          {% if request.user.is_authenticated %}
                 <li><a href="/">About</a></li>
                   <li><a href="https://www.everydayhealth.com/everything-you-need-know-about-fitness-why-its-about-way-more-than-hitting-gym/">Fitness</a></li>
                 <li><a href="https://www.shape.com/fitness/tips/our-25-all-time-best-workout-tips">Workout Tips</a></li>
                   <li><a href="{% url 'BMI' %}">BMI</a></li>
                   <li><a href="{% url 'food_options' %}">Super Foods</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+
+          {% else %}
+                <li><a href="/">About</a></li>
+                  <li><a href="https://www.everydayhealth.com/everything-you-need-know-about-fitness-why-its-about-way-more-than-hitting-gym/">Fitness</a></li>
+                    <li><a href="https://www.shape.com/fitness/tips/our-25-all-time-best-workout-tips">Workout Tips</a></li>
+                  <li><a href="{% url 'BMI' %}">BMI</a></li>
+                  <li><a href="{% url 'food_options' %}">Super Foods</a></li>
                 <li><a href="{% url 'login' %}">Login</a></li>
                 <li><a href="{% url 'signup' %}">Registration</a></li>
+          {% endif %}
+
+
 
       </ul>
     </div><!-- /.navbar-collapse -->

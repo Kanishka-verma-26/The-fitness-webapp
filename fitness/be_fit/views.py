@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import *
 from .models import *
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate
 from django.contrib import messages
 from django.http import HttpResponse
 from django.urls import reverse
@@ -41,15 +42,31 @@ def login(request):
         print(r_em.exists())
         print(r_ps.exists())
         print("length ", len(r_ps))
-        print(r_em[0] in r_ps)
+        user = authenticate(email=entered_email, password=entered_pass)
+        print(user)
+        print(request.user)
+        print("auth",request.user.is_authenticated)
 
-        if r_em[0] in r_ps:
-            return render(request,"gender.html")
-        elif r_em.exists() == False and r_ps.exists() == False:
-            messages.success(request, "User doesn't exist, Register your self")
-        elif r_em.exists() == False or r_ps.exists() == False:
+
+        if user == None:
             messages.success(request, 'Incorrect Username or Password')
 
+
+        # if len(r_em)==0:
+        #     messages.success(request, "User doesn't exist, Register your self")
+
+
+        # if r_em[0] in r_ps:
+        #     return render(request,"gender.html")
+        # elif r_em.exists() == False and r_ps.exists() == False:
+        #     messages.success(request, "User doesn't exist, Register your self")
+        # elif r_em.exists() == False or r_ps.exists() == False:
+        #     messages.success(request, 'Incorrect Username or Password')
+
+
+        # else:
+        #     messages.success(request, "User doesn't exist, Register your self")
+        #
 
 
         # if r_em.exists() == False and r_ps.exists() == False:
