@@ -316,3 +316,13 @@ font-weight :bold;
   left: 50%;
   transform: translate(-130%, 800%);
 }
+
+#regisnsign label{
+color:white;
+font-size:30px
+}
+
+#regisnsign input{
+height:10px;
+width:300px;
+}

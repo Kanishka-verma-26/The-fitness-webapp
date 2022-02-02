@@ -33,12 +33,22 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+
+    'django.contrib.sites',
+
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'social_django',
-    'be_fit'
+
+    'be_fit',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
 ]
 
 MIDDLEWARE = [
@@ -87,6 +97,7 @@ DATABASES = {
 }
 
 
+
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -108,18 +119,23 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 AUTHENTICATION_BACKENDS = (
+    # 'social_core.backends.open_id.OpenIdAuth',
     # 'social_core.backends.google.GoogleOpenId',
     'social_core.backends.google.GoogleOAuth2',
     'social_core.backends.google.GoogleOAuth',
+    'allauth.account.auth_backends.AuthenticationBackend',
     'social_core.backends.github.GithubOAuth2',
+    # 'social_core.backends.linkedin.LinkedinOAuth2',
 
     'django.contrib.auth.backends.ModelBackend',
 )
 
+SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '78rjufasi4mwvb'
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'vEuqEzZhrRzd7F4P'
 
 
-SOCIAL_AUTH_GITHUB_KEY = '8a3523718c1ed11eb065'
-SOCIAL_AUTH_GITHUB_SECRET = '5647a07df5ce4ebd6dd4b7b72e442c39ae8211b5'
+SOCIAL_AUTH_GITHUB_KEY = '74220b65a916e7909f7f'
+SOCIAL_AUTH_GITHUB_SECRET = '880a8a0e1da151d29036ac52987aa51fc6e769ad'
 
 
 # Internationalization
@@ -153,4 +169,23 @@ LOGOUT_REDIRECT_URL = "index"
 
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
+
+
 LOGIN_REDIRECT_URL = 'home'
+
+
+SITE_ID = 1
+
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google':{
+        'SCOPE' : [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS' : {
+            'access_type': 'online',
+        }
+
+    }
+}

@@ -20,6 +20,7 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('oauth/', include('social_django.urls',namespace='social')),
+    path('accounts/',include('allauth.urls')),
     path('',views.index,name='index'),
     path('gender/',views.Gender.as_view(),name="gender"),
     path('hard-workout/', views.hard, name="hard-workout"),
@@ -29,5 +30,6 @@ urlpatterns = [
     path('BMI/', views.BMI, name="BMI"),
     path('be_fit/',include('be_fit.urls')),
     path('food_options', views.food_options, name='food_options'),
+    path('home',views.home,name='home'),
 
 ]

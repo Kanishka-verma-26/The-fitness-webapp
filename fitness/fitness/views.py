@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView
+from django.contrib.auth.models import User
+
+
+
 
 # Create your views here.
 def index(request):
@@ -15,9 +19,13 @@ def loading(request):
 def hard(request):
     return render(request,'workout-fe.html')
 
-@login_required
+# @login_required
 def home(request):
-    return render(request,'core/home.html')
+    print("inside home auth", request.user.is_authenticated)
+    print( request.user.username)
+    val = User.objects.filter(username=request.user.username).exists()
+    print(val)
+    return render(request,'home.html',context={'val':val})
 
 def medium(request):
     return render(request,'medium.html')
