@@ -31,11 +31,11 @@ header[role="banner"] #logo-main {
   padding-left: 30px;
   padding-right: 30px;
 }
-
-    </style>
-    {% block stycontent %}
+{% block stycontent %}
 
     {% endblock %}
+    </style>
+
 
 </head>
 <body>
@@ -55,7 +55,6 @@ header[role="banner"] #logo-main {
     <div class="collapse navbar-collapse" id="navbar-primary-collapse">
       <ul class="nav navbar-nav">
           {% if user.is_authenticated %}
-          <h1 style="color:red">in if {{request.user.is_authenticated}} </h1>
 
                 <li><a href="/">About</a></li>
                   <li><a href="https://www.everydayhealth.com/everything-you-need-know-about-fitness-why-its-about-way-more-than-hitting-gym/">Fitness</a></li>
@@ -65,7 +64,6 @@ header[role="banner"] #logo-main {
                 <li><a href="{% url 'logout' %}">Logout</a></li>
 
           {% else %}
-                  <h1 style="color:red"> in else {{request.user.is_authenticated}} </h1>
 
                 <li><a href="/">About</a></li>
                   <li><a href="https://www.everydayhealth.com/everything-you-need-know-about-fitness-why-its-about-way-more-than-hitting-gym/">Fitness</a></li>

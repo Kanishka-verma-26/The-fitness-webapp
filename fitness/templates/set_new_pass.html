@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 style="font-size:4em">Reset Password</h1><br>
+<form method="post">
+  {% csrf_token %}
+  {% if messages %}
+			<ul class="messages">
+                {% for message in messages %}
+                    <li style="color:red; font-size:20px" {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+  <label style="font-size:30px; color:white" for="pass1">Enter_New_Password: </label>
+        <input style="font-size:60px; font-weight:bold" type="password" name="pass1" id="pass1" class="form-control form-control-lg" >
+        <br><br>
+
+  <label style="font-size:30px; color:white" for="pass2">Confirm_New_Password: </label>
+        <input style="font-size:60px; font-weight:bold" type="password" name="pass2" id="pass2" class="form-control form-control-lg" >
+        <br><br>
+
+  <div class="sendotpbtn">
+            <button style="  margin-left: 0px" type="submit" class="btn btn-primary btn-lg btn-inline">Change Password</button>
+        </div>
+</form>
+
+{% endblock %}

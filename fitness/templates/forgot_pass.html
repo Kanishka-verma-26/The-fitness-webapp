@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Password Reset</h1><br>
+    <form method="post">
+        {% csrf_token %}
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li style="color:red; font-size:20px" {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <label style="font-size:30px; color:white" for="passresetemail">Enter_Email: </label>
+        <input style="font-size:20px; font-weight:bold" type="email" name="passresetemail" id="passresetemail" class="form-control form-control-lg" >
+        <br><br>
+
+        <div class="sendotpbtn">
+            <button style="  margin-left: 0px" type="submit" class="btn btn-primary btn-lg btn-inline">Send OTP</button>
+        </div>
+
+
+    </form>
+</div>
+
+{% endblock %}

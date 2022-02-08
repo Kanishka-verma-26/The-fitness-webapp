@@ -1,5 +1,7 @@
 
 {% extends 'base.html' %}
+
+
 {% block content %}
 <div class="jumbotron">
     <h1>Registeration Form</h1><br>
@@ -11,7 +13,7 @@
         {% if messages %}
     <ul class="messages">
         {% for message in messages %}
-            <li style="color:red" {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+            <li style="color:red; font-size:20px" {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
         {% endfor %}
     </ul>
         {% endif %}
@@ -19,18 +21,18 @@
 
 
         <label for="fname">First Name </label>
-        <input type="text" id="fname" name="first_name" placeholder="First Name">
+        <input style="margin-left:10px; height:60px" type="text" id="fname" name="first_name" placeholder="First Name">
         <label for="lname">Last Name </label>
-        <input type="text" id="lname" name="last_name" placeholder="Last Name">
+        <input style="margin-left:10px; height:60px" type="text" id="lname" name="last_name" placeholder="Last Name">
         <label for="uname">Username </label>
-        <input type="text" id="uname" name="username" placeholder="Username">
+        <input style="margin-left:10px; height:60px" type="text" id="uname" name="username" placeholder="Username">
         <label for="email">Email </label>
-        <input type="email" id="email" name="email" placeholder="Email">
+        <input style="height:60px" type="email" id="email" name="email" placeholder="Email">
         <label for="pass">Password </label>
-        <input type="password" id='pass' name="password1" placeholder="Password">
+        <input style="height:60px" type="password" id='pass' name="password1" placeholder="Password">
         <label for="cpass">Confirm Password </label>
-        <input type="password" id="cpass" name="password2" placeholder="Confirm Password"><br>
-        <input type="submit" class="btn btn-outline-primary"><br>
+        <input style="height:60px" type="password" id="cpass" name="password2" placeholder="Confirm Password"><br>
+        <input style="height:80px; width:450px; font-size:30px; font-weight:bold; color:red; background-color:yellow " type="submit" class="btn btn-outline-primary"><br>
 
     </form>
     </div>

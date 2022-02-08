@@ -120,8 +120,6 @@ html {
 
 
 
-
-
 .jumbotron {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
@@ -319,10 +317,11 @@ font-weight :bold;
 
 #regisnsign label{
 color:white;
-font-size:30px
+font-size:25px
 }
 
 #regisnsign input{
-height:10px;
+height:30px;
 width:300px;
 }
+

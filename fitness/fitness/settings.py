@@ -48,7 +48,9 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.facebook',
+    # 'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+
 ]
 
 MIDDLEWARE = [
@@ -125,7 +127,8 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.google.GoogleOAuth',
     'allauth.account.auth_backends.AuthenticationBackend',
     'social_core.backends.github.GithubOAuth2',
-    # 'social_core.backends.linkedin.LinkedinOAuth2',
+    'social_core.backends.linkedin.LinkedinOAuth2',
+    'social_core.backends.instagram.InstagramOAuth2',
 
     'django.contrib.auth.backends.ModelBackend',
 )
@@ -165,7 +168,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = "index"
+LOGOUT_REDIRECT_URL = "login"
 
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
@@ -189,3 +192,18 @@ SOCIALACCOUNT_PROVIDERS = {
 
     }
 }
+
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'kanishka@hashstudioz.com'
+EMAIL_HOST_PASSWORD = 'KaniVerma@1234'
+
+
+
+
+# id = 577026496932-lkb1ntft9nhevuem1s33qd4d1knn0o9h.apps.googleusercontent.com
+# secret = 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
